@@ -1,0 +1,12 @@
+C:\ResumeParser\MicroservicesResume\src\Parser.Common\obj\Debug\net8.0\Parser.Common.csproj.AssemblyReference.cache
+C:\ResumeParser\MicroservicesResume\src\Parser.Common\obj\Debug\net8.0\Parser.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\ResumeParser\MicroservicesResume\src\Parser.Common\obj\Debug\net8.0\Parser.Common.AssemblyInfoInputs.cache
+C:\ResumeParser\MicroservicesResume\src\Parser.Common\obj\Debug\net8.0\Parser.Common.AssemblyInfo.cs
+C:\ResumeParser\MicroservicesResume\src\Parser.Common\obj\Debug\net8.0\Parser.Common.csproj.CoreCompileInputs.cache
+C:\ResumeParser\MicroservicesResume\src\Parser.Common\bin\Debug\net8.0\Parser.Common.deps.json
+C:\ResumeParser\MicroservicesResume\src\Parser.Common\bin\Debug\net8.0\Parser.Common.dll
+C:\ResumeParser\MicroservicesResume\src\Parser.Common\bin\Debug\net8.0\Parser.Common.pdb
+C:\ResumeParser\MicroservicesResume\src\Parser.Common\obj\Debug\net8.0\Parser.Common.dll
+C:\ResumeParser\MicroservicesResume\src\Parser.Common\obj\Debug\net8.0\refint\Parser.Common.dll
+C:\ResumeParser\MicroservicesResume\src\Parser.Common\obj\Debug\net8.0\Parser.Common.pdb
+C:\ResumeParser\MicroservicesResume\src\Parser.Common\obj\Debug\net8.0\ref\Parser.Common.dll

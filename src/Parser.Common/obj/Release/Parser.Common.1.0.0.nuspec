@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Parser.Common</id>
+    <version>1.0.0</version>
+    <authors>Parser.Common</authors>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework="net8.0">
+        <dependency id="Microsoft.Extensions.Configuration" version="7.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Configuration.Binder" version="7.0.4" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.DependencyInjection" version="7.0.0" exclude="Build,Analyzers" />
+        <dependency id="MongoDB.Driver" version="2.19.2" exclude="Build,Analyzers" />
+        <dependency id="System.Linq.Expressions" version="4.3.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\ResumeParser\MicroservicesResume\src\Parser.Common\bin\Release\net8.0\Parser.Common.dll" target="lib\net8.0\Parser.Common.dll" />
+  </files>
+</package>

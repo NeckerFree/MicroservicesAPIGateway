@@ -1,0 +1,20 @@
+{
+  "SerializedFilePath": "c:\\ResumeParser\\MicroservicesResume\\src\\Employment.API\\obj\\Debug\\net8.0\\project.razor.json",
+  "FilePath": "c:\\ResumeParser\\MicroservicesResume\\src\\Employment.API\\Employment.API.csproj",
+  "Configuration": {
+    "ConfigurationName": "MVC-3.0",
+    "LanguageVersion": "7.0",
+    "Extensions": [
+      {
+        "ExtensionName": "MVC-3.0"
+      }
+    ]
+  },
+  "ProjectWorkspaceState": {
+    "TagHelpers": [],
+    "CSharpLanguageVersion": 1100
+  },
+  "RootNamespace": "Employment.API",
+  "Documents": [],
+  "SerializationFormat": "0.3"
+}
