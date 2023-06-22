@@ -1,7 +1,8 @@
 ﻿using Identity.Api.DbContext;
 using Identity.Api.Entities;
-using Identity.Api.Hasher;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+//using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -21,7 +22,7 @@ namespace Identity.Api.EndPoints
             group.MapPost("/getToken", [AllowAnonymous] async (UserDto user, IdentityMSContext db) =>
             {
 
-                PasswordHasher<UserDto> passwordHasher = new PasswordHasher<UserDto>();
+                Hasher.PasswordHasher<UserDto> passwordHasher = new Hasher.PasswordHasher<UserDto>();
                 var dbUser = await db.Users.FirstOrDefaultAsync(u => u.UserName == user.UserName);
                 if (dbUser != null)
                 {
@@ -72,56 +73,57 @@ namespace Identity.Api.EndPoints
                     return Results.Unauthorized();
                 }
             });
-            //group.MapGet("/items", [Authorize] async (IdentityMSContext db) =>
-            //{
-            //    return await db.Items.ToListAsync();
-            //});
+            group.MapGet("/users", async (IdentityMSContext db) =>
+            {
+                return await db.Users.ToListAsync();
+            });
 
-            //group.MapPost("/items", [Authorize] async (IdentityMSContext db, Item item) => {
-            //    if (await db.Items.FirstOrDefaultAsync(x => x.Id == item.Id) != null)
-            //    {
-            //        return Results.BadRequest();
-            //    }
+            group.MapPost("/users", [Authorize] async (IdentityMSContext db, IdentityUser user) =>
+            {
+                if (await db.Users.FirstOrDefaultAsync(x => x.Id == user.Id) != null)
+                {
+                    return Results.BadRequest();
+                }
 
-            //    db.Items.Add(item);
-            //    await db.SaveChangesAsync();
-            //    return Results.Created($"/Items/{item.Id}", item);
-            //});
+                db.Users.Add(user);
+                await db.SaveChangesAsync();
+                return Results.Created($"/users/{user.Id}", user);
+            });
 
-            //group.MapGet("/items/{id}", [Authorize] async (IdentityMSContext db, int id) =>
-            //{
-            //    var item = await db.Items.FirstOrDefaultAsync(x => x.Id == id);
+            group.MapGet("/users/{id}", [Authorize] async (IdentityMSContext db, string id) =>
+            {
+                var item = await db.Users.FirstOrDefaultAsync(x => x.Id == id);
 
-            //    return item == null ? Results.NotFound() : Results.Ok(item);
-            //});
+                return item == null ? Results.NotFound() : Results.Ok(item);
+            });
 
-            //group.MapPut("/items/{id}", [Authorize] async (IdentityMSContext db, int id, Item item) =>
-            //{
-            //    var existItem = await db.Items.FirstOrDefaultAsync(x => x.Id == id);
-            //    if (existItem == null)
-            //    {
-            //        return Results.BadRequest();
-            //    }
+            group.MapPut("/users/{id}", [Authorize] async (IdentityMSContext db, string id, IdentityUser user) =>
+            {
+                var existItem = await db.Users.FirstOrDefaultAsync(x => x.Id == id);
+                if (existItem == null)
+                {
+                    return Results.BadRequest();
+                }
 
-            //    existItem.Title = item.Title;
-            //    existItem.IsCompleted = item.IsCompleted;
+                //existItem.Title = user.Title;
+                //existItem.IsCompleted = item.IsCompleted;
 
-            //    await db.SaveChangesAsync();
-            //    return Results.Ok(item);
-            //});
+                await db.SaveChangesAsync();
+                return Results.Ok(existItem);
+            });
 
-            //group.MapDelete("/items/{id}", [Authorize] async (IdentityMSContext db, int id) =>
-            //{
-            //    var existItem = await db.Items.FirstOrDefaultAsync(x => x.Id == id);
-            //    if (existItem == null)
-            //    {
-            //        return Results.BadRequest();
-            //    }
+            group.MapDelete("/users/{id}", [Authorize] async (IdentityMSContext db, string id) =>
+            {
+                var existItem = await db.Users.FirstOrDefaultAsync(x => x.Id == id);
+                if (existItem == null)
+                {
+                    return Results.BadRequest();
+                }
 
-            //    db.Items.Remove(existItem);
-            //    await db.SaveChangesAsync();
-            //    return Results.NoContent();
-            //});
+                db.Users.Remove(existItem);
+                await db.SaveChangesAsync();
+                return Results.NoContent();
+            });
         }
     }
 }

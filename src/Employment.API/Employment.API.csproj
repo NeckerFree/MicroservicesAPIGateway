@@ -9,7 +9,8 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0-preview.3.23177.8" />
-    <PackageReference Include="Parser.Common" Version="1.0.1" />
+	  <PackageReference Include="MongoDB.Bson" Version="2.19.2" />
+	  <PackageReference Include="Parser.Common" Version="1.0.1" />
     <PackageReference Include="Parser.Contracts" Version="1.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
