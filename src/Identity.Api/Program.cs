@@ -20,7 +20,7 @@ builder.Services.AddAuthentication(o =>
         ValidIssuer = builder.Configuration["Jwt:Issuer"],
         ValidAudience = builder.Configuration["Jwt:Audience"],
         IssuerSigningKey = new SymmetricSecurityKey
-            (Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"])),
+            (Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]?? throw new InvalidOperationException("JWT Not Found"))),
         ValidateIssuer = true,
         ValidateAudience = true,
         ValidateLifetime = false,
@@ -41,11 +41,11 @@ JWT jwt = new JWT()
 {
     Issuer = builder.Configuration["Jwt:Issuer"],
     Audience = builder.Configuration["Jwt:Audience"],
-    Key = builder.Configuration["Jwt:Key"]
+    Key = builder.Configuration["Jwt:Key"] ?? throw new InvalidOperationException("JWT Not Found")
 };
 var app = builder.Build();
 
-app.UseCors();
+//app.UseCors();
 app.UseAuthentication();
 app.UseAuthorization();
 

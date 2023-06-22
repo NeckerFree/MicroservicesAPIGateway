@@ -4,6 +4,7 @@ using Parser.Common.MassTransit;
 using Parser.Common.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AdMongo()
     .AddMongoRepository<JobPosition>("Employments")

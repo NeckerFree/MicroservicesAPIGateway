@@ -3876,6 +3876,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "Microsoft.AspNetCore.OpenApi >= 8.0.0-preview.3.23177.8",
+      "MongoDB.Bson >= 2.19.2",
       "Parser.Common >= 1.0.1",
       "Parser.Contracts >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.4.0"
@@ -3928,6 +3929,10 @@
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
             "version": "[8.0.0-preview.3.23177.8, )"
+          },
+          "MongoDB.Bson": {
+            "target": "Package",
+            "version": "[2.19.2, )"
           },
           "Parser.Common": {
             "target": "Package",
