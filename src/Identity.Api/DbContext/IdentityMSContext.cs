@@ -1,11 +1,9 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 
 namespace Identity.Api.DbContext
 {
-    public class IdentityMSContext: IdentityUserContext<IdentityUser>
+    public class IdentityMSContext: IdentityDbContext
     {
         protected override void OnModelCreating(ModelBuilder builder)
         {
