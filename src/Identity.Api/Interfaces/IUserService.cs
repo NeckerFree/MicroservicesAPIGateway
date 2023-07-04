@@ -1,10 +1,10 @@
 ﻿using Identity.Api.DbContext;
-using Microsoft.AspNetCore.Identity;
+using Identity.Api.Entities;
 
 namespace Identity.Api.Interfaces
 {
     public interface IUserService
     {
-        (bool, string?) IsLoginValid(IdentityUser user, IdentityMSContext db);
+        (bool, string?) IsLoginValid(Login login, IdentityMSContext db);
     }
 }

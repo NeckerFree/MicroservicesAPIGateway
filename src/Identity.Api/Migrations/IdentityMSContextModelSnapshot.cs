@@ -47,6 +47,15 @@ namespace Identity.Api.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "00000000-0000-0000-0000-000000000000",
+                            ConcurrencyStamp = "00000000-0000-0000-0000-000000000000",
+                            Name = "SuperAdmin",
+                            NormalizedName = "SUPERADMIN"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -84,6 +93,10 @@ namespace Identity.Api.Migrations
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
@@ -137,6 +150,10 @@ namespace Identity.Api.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("IdentityUser");
+
+                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -199,6 +216,13 @@ namespace Identity.Api.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "00000000-0000-0000-0000-000000000000",
+                            RoleId = "00000000-0000-0000-0000-000000000000"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -218,6 +242,38 @@ namespace Identity.Api.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("Identity.Api.Entities.AppUser", b =>
+                {
+                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasDiscriminator().HasValue("AppUser");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "00000000-0000-0000-0000-000000000000",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "f272c699-4e61-41d8-87d2-f913a3d17eda",
+                            Email = "elio@gmail.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedUserName = "ELIO@GMAIL.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEJqCv6xqJhHMqUnFappw6njlHr8t5lrzHi3ZlI3UdlCzP0a21JTGYJRQ5m4ZhO2rdQ==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "9139e7de-85fe-4258-991d-3ed22c62deea",
+                            TwoFactorEnabled = false,
+                            UserName = "elio@gmail.com",
+                            FirstName = "Elio",
+                            LastName = "Cortés"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

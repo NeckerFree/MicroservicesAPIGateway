@@ -1,9 +1,10 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Identity.Api.Entities;
+using Microsoft.AspNetCore.Identity;
 
 namespace Identity.Api.Interfaces
 {
     public interface ITokenService
     {
-        string GenerateToken(IdentityUser user, string key, string issuer, string audience);
+        string GenerateToken(Login user, string key, string issuer, string audience);
     }
 }

@@ -1,7 +1,7 @@
 {
   "Routes": [
     {
-      "DownstreamPathTemplate": "/api/JobPosition",
+      "DownstreamPathTemplate": "/JobPosition",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -9,19 +9,19 @@
           "Port": 7257
         }
       ],
-      "UpstreamPathTemplate": "/gateway/api/JobPosition",
+      "UpstreamPathTemplate": "/gateway/JobPosition",
       "UpstreamHttpMethod": [ "GET" ]
     },
     {
-      "DownstreamPathTemplate": "/api/Client",
+      "DownstreamPathTemplate": "/Client",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 7185
+          "Port": 5070
         }
       ],
-      "UpstreamPathTemplate": "/gateway/api/Client",
+      "UpstreamPathTemplate": "/gateway/Client",
       "UpstreamHttpMethod": [ "GET" ]
     }
   ]
