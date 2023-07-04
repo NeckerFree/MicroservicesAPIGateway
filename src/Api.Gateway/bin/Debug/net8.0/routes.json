@@ -1,21 +1,21 @@
 {
   "routes": [
     {
-      "endpoint": "/movies",
+      "endpoint": "/client",
       "destination": {
-        "uri": "http://localhost:8090/movies/",
-        "requiresAuthentication": "true"
+        "path": "http://localhost:5036/api/client/",
+        "requiresAuthentication": "false"
       }
     },
     {
-      "endpoint": "/songs",
+      "endpoint": "/jobposition",
       "destination": {
-        "uri": "http://localhost:8091/songs/",
+        "path": "http://localhost:5070/api/jobposition/",
         "requiresAuthentication": "false"
       }
     }
   ],
   "authenticationService": {
-    "uri": "http://localhost:8080/api/auth/"
+    "path": "https://localhost:7291/api/security/users"
   }
 }

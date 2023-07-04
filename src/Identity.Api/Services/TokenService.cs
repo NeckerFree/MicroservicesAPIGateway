@@ -1,5 +1,5 @@
-﻿using Identity.Api.Interfaces;
-using Microsoft.AspNetCore.Identity;
+﻿using Identity.Api.Entities;
+using Identity.Api.Interfaces;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -9,7 +9,7 @@ namespace Identity.Api.Services
 {
     public class TokenService : ITokenService
     {
-        public string GenerateToken(IdentityUser user, string secretKey, string issuer, string audience)
+        public string GenerateToken(Login login, string secretKey, string issuer, string audience)
         {
             var handler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(secretKey);
@@ -18,7 +18,7 @@ namespace Identity.Api.Services
                         Issuer = issuer,
                         Audience = audience,
                         //Subject = new ClaimsIdentity(new[] { new Claim("id", user.Id.ToString()), new Claim(ClaimTypes.Role, user.Roles) }),
-                        Subject = new ClaimsIdentity(new[] { new Claim("id", user.Id.ToString())}),
+                        Subject = new ClaimsIdentity(new[] { new Claim("email", login.Email?? throw new Exception("Email Invalid"))}),
                         Expires = DateTime.UtcNow.AddMinutes(30),
                         SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
                     };
