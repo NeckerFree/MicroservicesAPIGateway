@@ -27,7 +27,7 @@ namespace Identity.Api.DbContext
             //create user
             var appUser = new AppUser
             {
-                Id =new Guid().ToString(),
+                SecurityStamp = Guid.NewGuid().ToString(),
                 Email = "elio@gmail.com",
                 EmailConfirmed = true,
                 FirstName = "Elio",
