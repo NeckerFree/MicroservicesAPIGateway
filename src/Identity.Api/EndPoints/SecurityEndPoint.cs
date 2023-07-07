@@ -1,8 +1,6 @@
-﻿using Identity.Api.DbContext;
-using Identity.Api.Entities;
+﻿using Identity.Api.Entities;
 using Identity.Api.Interfaces;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Identity.Api.EndPoints
@@ -20,7 +18,7 @@ namespace Identity.Api.EndPoints
                     return Results.BadRequest(message);
                 return Results.Ok(message);
             });
-            group.MapPost("/registeration", [Authorize] async (RegistrationModel regisModel, IAuthService authService) =>
+            group.MapPost("/registeration", async ([FromBody]  RegistrationModel regisModel, IAuthService authService) =>
             {
                 var (status, message) = await authService.Registeration(regisModel, "GeneralUser");
                 if (status == 0)
@@ -28,7 +26,7 @@ namespace Identity.Api.EndPoints
                     return Results.BadRequest(message);
                 }
                 return Results.Created($"/register/{regisModel.Username}", regisModel);
-            });
+            }).RequireAuthorization();
             
         }
     }
