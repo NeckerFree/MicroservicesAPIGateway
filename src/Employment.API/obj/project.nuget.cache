@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "JO3Y6uNadG/hrWMGa6UoABYjnNzY6SHnXO+eqMRRfIAPoUDQwtgbmfmL2EGzVQog6QhhkubXgtiCAcHeC9uoZg==",
+  "dgSpecHash": "x6vP3Ai3p54uYE5pOLcgLcNVi0PqEAQdr7Tq6iyU47pENPqgiI/HGFIDdF0K89QKvwcq1WzO/frfW8To1VsbvA==",
   "success": true,
   "projectFilePath": "C:\\Elio\\Development\\Projects\\MicroservicesAPIGateway\\src\\Employment.API\\Employment.API.csproj",
   "expectedPackageFiles": [

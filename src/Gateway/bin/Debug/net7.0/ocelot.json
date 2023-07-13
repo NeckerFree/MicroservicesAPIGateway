@@ -1,28 +1,41 @@
 {
+  "Aggregates": [
+    {
+      "UpstreamPathTemplate": "/api/ClientJobs",
+      "RouteKeys": [ "Clients", "Jobs" ],
+      "Aggregator":  "ClientJobsAggregator"
+    }
+  ],
+
   "Routes": [
     {
-      "DownstreamPathTemplate": "/JobPosition",
-      "DownstreamScheme": "https",
+      "UpstreamPathTemplate": "/api/JobPosition",
+      "UpstreamHttpMethod": [ "GET" ],
+
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
           "Port": 7257
         }
       ],
-      "UpstreamPathTemplate": "/gateway/JobPosition",
-      "UpstreamHttpMethod": [ "GET" ]
+      "DownstreamPathTemplate": "/api/JobPosition",
+      "Key":  "Jobs"
     },
     {
-      "DownstreamPathTemplate": "/Client",
-      "DownstreamScheme": "https",
+      "UpstreamPathTemplate": "/api/Client",
+      "UpstreamHttpMethod": [ "GET" ],
+
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5070
+          "Port": 7185
         }
       ],
-      "UpstreamPathTemplate": "/gateway/Client",
-      "UpstreamHttpMethod": [ "GET" ]
+      "DownstreamPathTemplate": "/api/Client",
+      "Key":  "Clients"
     }
-  ]
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:7020"
+  }
 }
