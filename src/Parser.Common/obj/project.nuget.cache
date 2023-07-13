@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "+Mx3Hd6n6ZDSUKR5XS1asjrqRQBGycoMU0ytOjD+0k4CllRMOFV+9F3Dwmkc918GFxt+/hxJs/eJ2WgjYDtzPA==",
+  "dgSpecHash": "KjI8a6yI7ipycKZuKcM9UyW+ixpBgyE1DTZX0xN9CMJZcqyYJgnXvPR9TZQbeoQLBYu8d9ChYZnlDn237pTKCQ==",
   "success": true,
   "projectFilePath": "C:\\Elio\\Development\\Projects\\MicroservicesAPIGateway\\src\\Parser.Common\\Parser.Common.csproj",
   "expectedPackageFiles": [
