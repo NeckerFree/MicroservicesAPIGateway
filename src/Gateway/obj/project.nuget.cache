@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Ti11ntOpJlfwyWxAJEAPXdEeRI9CTy5H0vDl5gR1eNRUs8Fz3YCYqdrYgJ4wXJ5H6h3BKX9Nu2LW6jF7EvLb9A==",
+  "dgSpecHash": "dgkCsFRLhTzf7H2phiSzJkgqc0/3hshyoQ40Xg7CnV82SXuq6T6OnHU30LV40yNHTCEK7LM5C2pPRBd7dhuxYA==",
   "success": true,
   "projectFilePath": "C:\\Elio\\Development\\Projects\\MicroservicesAPIGateway\\src\\Gateway\\Gateway.csproj",
   "expectedPackageFiles": [

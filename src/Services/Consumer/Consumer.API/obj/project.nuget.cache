@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "y54+3YjT2UYIk1N/J7MvDuNaPXQu+k09nNiguGI+rOQzl4kiHnFbqvKjBrgzKkF+KhnImDIT+PUeqzkCd8QSyQ==",
+  "dgSpecHash": "Rity0OnG1HbU42U4RkUBUc0YOyDHfg4mQEMXCZ0za5LLdFcrFWEbHl6SuEubZX3owB7g5VtEYKMEAhdzj5uReA==",
   "success": true,
   "projectFilePath": "C:\\Elio\\Development\\Projects\\MicroservicesAPIGateway\\src\\Services\\Consumer\\Consumer.API\\Consumer.API.csproj",
   "expectedPackageFiles": [

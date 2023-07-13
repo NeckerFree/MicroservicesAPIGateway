@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "VuKjSn9XX2HYHyn/RlgdFja0go4cdXXQmxoeMJHE4dtW7o9qQNV/Dh06DcbrOtGRVBaYxSChARAs0Oy5pSW4EA==",
+  "dgSpecHash": "XgSiyxY+Tz2jmTmjw45oYd9nvpS0UeTF1X5/7vkfbACuKWWY5Aj+dDkyniqL1Qy7Q6MI93AkuK9tkR7ai1IYZg==",
   "success": true,
   "projectFilePath": "C:\\Elio\\Development\\Projects\\MicroservicesAPIGateway\\src\\Identity.Api\\Identity.Api.csproj",
   "expectedPackageFiles": [
