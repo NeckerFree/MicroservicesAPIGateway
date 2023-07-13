@@ -14,3 +14,7 @@
 /src/.vs/ProjectEvaluation/resumeparser.metadata.v7.bin
 /src/.vs/ProjectEvaluation/resumeparser.projects.v7.bin
 /src/Gateway/obj
+/src/Services/Consumer/Consumer.API/obj/Debug/net8.0/Consumer.API.csproj.AssemblyReference.cache
+/src/Parser.Common/obj/Debug/net8.0/Parser.Common.csproj.AssemblyReference.cache
+/src/Gateway/obj/Debug/net7.0/Gateway.csproj.AssemblyReference.cache
+/src/Employment.API/obj/Debug/net8.0/Employment.API.csproj.AssemblyReference.cache
