@@ -40,3 +40,10 @@ C:\Elio\Development\Projects\MicroservicesAPIGateway\src\Gateway\obj\Debug\net7.
 C:\Elio\Development\Projects\MicroservicesAPIGateway\src\Gateway\obj\Debug\net7.0\Gateway.pdb
 C:\Elio\Development\Projects\MicroservicesAPIGateway\src\Gateway\obj\Debug\net7.0\Gateway.genruntimeconfig.cache
 C:\Elio\Development\Projects\MicroservicesAPIGateway\src\Gateway\obj\Debug\net7.0\ref\Gateway.dll
+C:\Elio\Development\Projects\MicroservicesAPIGateway\src\Gateway\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Elio\Development\Projects\MicroservicesAPIGateway\src\Gateway\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Elio\Development\Projects\MicroservicesAPIGateway\src\Gateway\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+C:\Elio\Development\Projects\MicroservicesAPIGateway\src\Gateway\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
+C:\Elio\Development\Projects\MicroservicesAPIGateway\src\Gateway\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Elio\Development\Projects\MicroservicesAPIGateway\src\Gateway\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+C:\Elio\Development\Projects\MicroservicesAPIGateway\src\Gateway\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
