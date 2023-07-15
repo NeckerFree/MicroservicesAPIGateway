@@ -1,7 +1,7 @@
 
 using Gateway.Aggregators;
+using Gateway.Handlers;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
@@ -12,6 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Configuration.SetBasePath(builder.Environment.ContentRootPath)
     .AddJsonFile("ocelot.json", optional: false, reloadOnChange: true);
 builder.Services.AddOcelot(builder.Configuration)
+    .AddDelegatingHandler<BlackListHandler>()
     .AddSingletonDefinedAggregator<ClientJobsAggregator>();
 
 //builder.Services.AddCors();
@@ -24,8 +25,6 @@ builder.Services.AddAuthentication(options =>
 })
     .AddJwtBearer(options =>
     {
-        //options.SaveToken = true;
-        //options.RequireHttpsMetadata = false;
         options.TokenValidationParameters = new TokenValidationParameters()
         {
             ValidAudience = builder.Configuration["Jwt:Audience"] ?? throw new InvalidOperationException("Audience Not Found"),

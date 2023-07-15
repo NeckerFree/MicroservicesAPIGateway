@@ -22,7 +22,11 @@
       "Key": "Jobs",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer"
-      }
+      },
+      "RouteClaimsRequirement": {
+        "Role": "GeneralUser"
+      },
+      "DelegatingHandlers": [ "BlackListHandler" ]
     },
     {
       "UpstreamPathTemplate": "/api/Client",
@@ -38,6 +42,16 @@
       "Key": "Clients",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "Role": "SuperAdmin"
+      },
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "3s",
+        "PeriodTimespan": 5,
+        "Limit": 1
       }
     }
   ],
