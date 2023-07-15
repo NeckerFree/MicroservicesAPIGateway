@@ -58,15 +58,16 @@ namespace Identity.Api.Services
                 return (0, "Invalid password");
 
             var userRoles = await userManager.GetRolesAsync(user);
+
             var authClaims = new List<Claim>
             {
                new Claim(ClaimTypes.Name, user.UserName),
-               new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+               new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())               
             };
 
             foreach (var userRole in userRoles)
             {
-                authClaims.Add(new Claim(ClaimTypes.Role, userRole));
+                authClaims.Add(new Claim("Role", userRole));
             }
             string token = GenerateToken(authClaims);
             return (1, token);

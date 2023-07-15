@@ -8,6 +8,7 @@ dotnet ef database update --project "Identity.API"
 
 dotnet ef database drop --project "Identity.API"
 
-https://github.com/jhonmarmolejo/apigatewayNetCoreOcelot
+[Creando una API Gateway en .NET Core con Ocelot](https://www.youtube.com/watch?v=zklBV7_7Nao)
+[GH API Gateway](https://github.com/jhonmarmolejo/apigatewayNetCoreOcelot)
 
-https://www.youtube.com/watch?v=zklBV7_7Nao
+[.NET Microservices – Full Course for Beginners](https://www.youtube.com/watch?v=CqCDOosvZIk)
